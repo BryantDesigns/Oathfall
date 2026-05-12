@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*res://scripts/autoloads/event_bus.gd"
+RNG="*res://scripts/autoloads/rng.gd"
 
 [editor_plugins]
 
