@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/heroes/dreadhunter.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/components/health_component.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/components/hurtbox_component.gd" id="3"]
+
+[sub_resource type="CircleShape2D" id="shape_body"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="shape_hurt"]
+radius = 6.0
+
+[node name="Dreadhunter" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1")
+move_speed = 150.0
+health_path = NodePath("HealthComponent")
+hurtbox_path = NodePath("HurtboxComponent")
+
+[node name="Visual" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color(0.4, 0.85, 0.95, 1)
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource("shape_body")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2")
+max_hp = 100
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 32
+script = ExtResource("3")
+health_path = NodePath("../HealthComponent")
+
+[node name="HurtShape" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("shape_hurt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
