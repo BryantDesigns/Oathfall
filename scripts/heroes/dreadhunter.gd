@@ -32,3 +32,7 @@ func _fire_salvo() -> void:
 		get_tree().current_scene.add_child(bolt)
 		bolt.global_position = global_position
 		bolt.configure(bolt_direction, salvo_damage, self)
+
+func _ready() -> void:
+	super()
+	add_to_group("hero")

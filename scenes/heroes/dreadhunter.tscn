@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/heroes/dreadhunter.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/components/health_component.gd" id="2"]
 [ext_resource type="Script" path="res://scripts/components/hurtbox_component.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/components/xp_component.gd" id="4"]
+[ext_resource type="Resource" path="res://resources/xp_curve.tres" id="5"]
 
 [sub_resource type="CircleShape2D" id="shape_body"]
 radius = 6.0
@@ -40,6 +42,10 @@ health_path = NodePath("../HealthComponent")
 
 [node name="HurtShape" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("shape_hurt")
+
+[node name="XpComponent" type="Node" parent="."]
+script = ExtResource("4")
+curve = ExtResource("5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
