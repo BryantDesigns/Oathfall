@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/upgrade.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"speed_plus"
+description = "+15% Move Speed"
+max_hp_pct = 0.0
+salvo_damage_flat = 0
+move_speed_pct = 0.15

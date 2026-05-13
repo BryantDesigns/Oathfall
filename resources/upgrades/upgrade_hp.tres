@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/upgrade.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"hp_plus"
+description = "+20% Max HP"
+max_hp_pct = 0.20
+salvo_damage_flat = 0
+move_speed_pct = 0.0
