@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Oathfall"
 config/description="A dark fantasy top-down roguelite."
-run/main_scene="res://scenes/world/main.tscn"
+run/main_scene="res://scenes/world/run.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
