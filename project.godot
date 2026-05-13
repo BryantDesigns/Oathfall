@@ -24,6 +24,14 @@ Settings="*res://scripts/autoloads/settings.gd"
 SaveManager="*res://scripts/autoloads/save_manager.gd"
 GameState="*res://scripts/autoloads/game_state.gd"
 
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/AsepriteWizard/plugin.cfg")
@@ -74,3 +82,7 @@ attack={
 [internationalization]
 
 locale/translations=PackedStringArray("res://translations/oathfall.en.en.translation")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
