@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/upgrade.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"damage_plus"
+description = "+1 damage per Hex-Bolt"
+max_hp_pct = 0.0
+salvo_damage_flat = 1
+move_speed_pct = 0.0
