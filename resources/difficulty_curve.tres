@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DifficultyCurve" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/difficulty_curve.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+hp_growth_per_wave = 0.25
+speed_growth_per_wave = 0.05
