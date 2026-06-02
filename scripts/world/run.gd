@@ -16,6 +16,7 @@ var _hud: HUD
 var _level_up_modal: LevelUpModal
 var _arena: Node
 var _wave_spawner: WaveSpawner
+var _results_shown: bool = false
 
 func _ready() -> void:
 	GameState.start_run("dreadhunter", int(Time.get_ticks_usec()))
@@ -60,6 +61,9 @@ func _on_all_waves_completed() -> void:
 	EventBus.run_ended.emit(true)
 
 func _on_run_ended(_won: bool) -> void:
+	if _results_shown:
+		return
+	_results_shown = true
 	_wave_spawner.stop()
 	var results_screen := RESULTS_SCENE.instantiate()
 	add_child(results_screen)
