@@ -14,5 +14,4 @@ func _physics_process(_delta: float) -> void:
 		_target_hero = get_tree().get_first_node_in_group("hero")
 		if _target_hero == null:
 			return
-	velocity = Enemy.velocity_toward(global_position, _target_hero.global_position, move_speed)
-	move_and_slide()
+	chase(_target_hero)
