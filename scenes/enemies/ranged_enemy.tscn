@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/ranged_enemy.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/components/health_component.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/components/hurtbox_component.gd" id="3"]
+
+[sub_resource type="CircleShape2D" id="shape_body"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="shape_hurt"]
+radius = 5.0
+
+[node name="RangedEnemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1")
+move_speed = 60.0
+health_path = NodePath("HealthComponent")
+hurtbox_path = NodePath("HurtboxComponent")
+xp_value = 2
+
+[node name="Visual" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color(0.55, 0.45, 0.85, 1)
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource("shape_body")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2")
+max_hp = 4
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("3")
+health_path = NodePath("../HealthComponent")
+
+[node name="HurtShape" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("shape_hurt")
