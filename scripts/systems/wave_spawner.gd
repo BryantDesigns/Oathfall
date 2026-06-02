@@ -22,6 +22,8 @@ var _entry_remaining: Array[int] = []
 var _finished: bool = false
 
 func start() -> void:
+	_finished = false
+	current_wave_index = -1
 	if waves.is_empty():
 		_finished = true
 		all_waves_completed.emit()
