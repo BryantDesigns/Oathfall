@@ -69,3 +69,11 @@ func test_difficulty_multipliers_applied_per_wave() -> void:
 	assert_almost_eq(_spawns[0][2], 1.0, 0.001)   # wave 0 speed mult
 	assert_almost_eq(_spawns[1][1], 1.25, 0.001)  # wave 1 hp mult
 	assert_almost_eq(_spawns[1][2], 1.05, 0.001)  # wave 1 speed mult
+
+func test_two_entry_wave_schedules_independently() -> void:
+	var spawner := _make_spawner([_wave([_entry(2, 1.0), _entry(1, 2.0)], 3.0)])
+	spawner.start()
+	spawner.advance(1.0)
+	assert_eq(_spawns.size(), 1, "only entry[0] fires at t=1")
+	spawner.advance(1.0)
+	assert_eq(_spawns.size(), 3, "entry[0] fires again and entry[1] fires at t=2")
