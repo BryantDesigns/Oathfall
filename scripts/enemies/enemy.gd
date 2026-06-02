@@ -39,6 +39,12 @@ static func velocity_toward(from: Vector2, to: Vector2, speed: float) -> Vector2
 		return Vector2.ZERO
 	return offset.normalized() * speed
 
+## Move toward a target node this frame using move_and_slide(). Concrete
+## chasers call this from _physics_process.
+func chase(target: Node2D) -> void:
+	velocity = velocity_toward(global_position, target.global_position, move_speed)
+	move_and_slide()
+
 func _on_died() -> void:
 	EventBus.enemy_died.emit(xp_value)
 	_on_pre_free()
