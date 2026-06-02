@@ -4,7 +4,7 @@ func _make_ranged() -> RangedEnemy:
 	var ranged := RangedEnemy.new()
 	ranged.preferred_distance = 180.0
 	ranged.distance_buffer = 30.0
-	return ranged
+	return autofree(ranged)
 
 func test_intent_approach_when_far() -> void:
 	assert_eq(_make_ranged().movement_intent(250.0), 1)
