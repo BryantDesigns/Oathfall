@@ -2,8 +2,6 @@
 
 A dark fantasy top-down action roguelite. Built with Godot 4 (GDScript), targeting Steam first and iOS/Android second.
 
-See [`docs/specs/2026-05-04-oathfall-tech-stack-design.md`](docs/specs/2026-05-04-oathfall-tech-stack-design.md) for the engineering spec and [`docs/plans/2026-05-04-m0-foundations.md`](docs/plans/2026-05-04-m0-foundations.md) for the M0 implementation plan.
-
 ## Quick Start
 
 ```bash
@@ -32,7 +30,7 @@ This project uses four export presets. Each developer must configure them locall
 | iOS | Compatibility (GLES3) | Mobile target |
 
 Engine version is pinned in `GODOT_VERSION`. Do not upgrade without benchmarking on
-target devices first — the M0 spec documents a known Android FPS regression in 4.4dev4–4.5.
+target devices first — there is a known Android FPS regression in Godot 4.4dev4–4.5.
 
 ## Project Layout
 
