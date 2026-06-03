@@ -19,3 +19,7 @@ dist/
 *.exe
 *.apk
 *.ipa
+
+# Planning docs (kept local, not tracked)
+docs/plans/
+docs/specs/
